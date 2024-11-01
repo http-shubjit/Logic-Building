@@ -8,7 +8,7 @@
 //     if(n==mid){
 //         return true;
 //     }
-    
+
 //     else if(n>mid){
 // start=mid+1;
 //     }
@@ -16,3 +16,28 @@
 //     end=mid-1;
 
 // }
+
+
+//** Find Second Largest Element without sorting a array;
+
+class Solution {
+    public static void main(String[] args) {
+        int[] arr = new int[] { 12, 3, 4, 2, 10, 6, 3 };
+        int first = arr[0];
+        int second = arr[0];
+
+        for (int i = 0; i < arr.length; i++) {
+
+            if (arr[i] > first) {
+                second = first;
+                first = arr[i];
+
+            } else if (first < arr[i] && second < arr[i]) {
+                second = arr[i];
+
+            }
+        }
+        System.out.println(second);
+    }
+}
+
